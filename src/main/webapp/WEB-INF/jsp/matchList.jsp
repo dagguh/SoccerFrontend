@@ -8,14 +8,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>List of matches</title>
     </head>
     <body>
         <h1>Matches:</h1>
 		${foo}
 		Still got ${ticket}
-
-		<img src="resources/boisko.png"/>
+	<applet codebase="resources/classes" code="pilkarzyki/ApletPilkarzyki.class" width="350" height="200"></applet>
+	<img src="resources/boisko.png"/>
 </body>
 </html>
