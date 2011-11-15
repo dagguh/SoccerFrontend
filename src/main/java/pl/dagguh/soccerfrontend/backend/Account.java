@@ -54,9 +54,9 @@ public class Account {
 		return "Account{" + "player=" + player + '}';
 	}
 
-	public static void create(Account account) {
+	public static String create(Account account) {
 		log.info("Creating " + account);
-		Backend.getResource("/account/").put(account);
+		return Backend.getResource("/account/").put(String.class, account);
 	}
 
 	public static String authenticate(Credentials credentials) {
