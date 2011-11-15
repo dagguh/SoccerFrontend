@@ -9,9 +9,9 @@
 	<body>
 		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 		<form:form action="lookupPlayer" modelAttribute="nick">
-			Nick:
+			Ksywa:
 			<form:input path="nick" />
-			<input type="submit" value="Lookup" />
+			<input type="submit" value="Pokaż jako XML" />
 		</form:form>
 	</body>
 </html>

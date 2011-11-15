@@ -9,11 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registration successful</title>
+        <title>Wynik rejestracji</title>
     </head>
     <body>
-        <h1>Success</h1>
-		Account created successfully for player ${nick}
-		<a href="authenticate">Authenticate</a>
+		${message}
+		<a href="authenticate">Zaloguj się</a>
 	</body>
 </html>

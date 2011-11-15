@@ -6,18 +6,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Logowanie</title>
+	</head>
 	<body>
-		${userError}
 		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 		<form:form action="authenticate" modelAttribute="credentials">
-			Nick:
+			Ksywa:
 			<form:input path="nick" />
 			<br/>
-			Password:
+			Hasło:
 			<form:input path="password" type="password" />
 			<br/>
-			<input type="submit" value="Authenticate &raquo;" />
+			<input type="submit" value="Zaloguj się" />
 		</form:form>
-		<a href="register">Register</a>
+		<span class="error">${userError}</span>
+		<a href="register">Zarejestruj się</a>
 	</body>
 </html>

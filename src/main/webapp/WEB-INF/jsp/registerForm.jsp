@@ -9,13 +9,14 @@
 	<body>
 		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 		<form:form action="register" modelAttribute="credentials">
-			Nick:
+			Ksywa:
 			<form:input path="nick" />
 			<br/>
-			Password:
+			Hasło:
 			<form:input path="password" type="password"/>
 			<br/>
-			<input type="submit" value="Register &raquo;" />
+			<input type="submit" value="Zarejestruj się" />
 		</form:form>
+		<a href="authenticate">Zaloguj się</a>
 	</body>
 </html>

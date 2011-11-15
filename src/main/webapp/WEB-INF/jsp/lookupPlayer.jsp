@@ -10,10 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Player ${nick}</title>
+        <title>Gracz ${nick}</title>
     </head>
     <body>
-		Player ${nick} as XML:
+		Gracz ${nick} przedstawiony jako XML:
 		<pre><c:out value="${playerXml}" escapeXml="true" /></pre>
 	</body>
 </html>
