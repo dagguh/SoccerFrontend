@@ -16,18 +16,18 @@ import pl.dagguh.soccerfrontend.backend.Account;
 public class Register {
 
 	@RequestMapping(value = "/registerForm", method = RequestMethod.GET)
-	public void registerForm(Model model) {
+	public void onGet(Model model) {
 		model.addAttribute(new Credentials());
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public String register() {
+	public String onMisusedGet() {
 		return "redirect:registerForm";
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public void register(@ModelAttribute Credentials credentials, Model model) {
-		Account.create(new Account(credentials));
-		model.addAttribute("nick", credentials.getNick());
+	public void onPost(@ModelAttribute Credentials credentials, Model model) {
+		String message = Account.create(new Account(credentials));
+		model.addAttribute("message", message);
 	}
 }
