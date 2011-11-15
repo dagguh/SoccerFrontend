@@ -14,7 +14,7 @@ import pl.dagguh.soccerfrontend.backend.Account;
  * @author Maciej Kwidziński <maciek.kwidzinski@gmail.com>
  */
 @Controller
-@SessionAttributes("ticket")
+@SessionAttributes("userError")
 public class Authenticate {
 
 	@RequestMapping(value = "/authenticateForm", method = RequestMethod.GET)
@@ -31,7 +31,7 @@ public class Authenticate {
 	public String authenticate(@ModelAttribute Credentials credentials, Model model) {
 		String ticket = Account.authenticate(credentials);
 		if (ticket.equals("")) {
-			model.addAttribute("userError", "Password mismatch.");
+			model.addAttribute("userError", "Podane hasło jest nieprawidłowe lub konto nie istnieje.");
 			return "redirect:authenticateForm";
 		} else {
 			model.addAttribute("nick", credentials.getNick());
