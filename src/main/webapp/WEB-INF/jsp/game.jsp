@@ -12,6 +12,9 @@
         <title>Gra</title>
     </head>
     <body>
-	<applet codebase="resources/classes" code="pilkarzyki/ApletPilkarzyki.class" width="550" height="600"></applet>
-</body>
+		Tutaj znajduje sie gra!
+		<br/>
+		A jej ID to ${gameId}
+		<!--	<applet codebase="resources/classes" code="pilkarzyki/ApletPilkarzyki.class" width="550" height="600"></applet>-->
+	</body>
 </html>
