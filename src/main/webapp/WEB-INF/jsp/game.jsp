@@ -15,6 +15,10 @@
 		Tutaj znajduje sie gra!
 		<br/>
 		A jej ID to ${gameId}
-		<!--	<applet codebase="resources/classes" code="pilkarzyki/ApletPilkarzyki.class" width="550" height="600"></applet>-->
+		<br/>
+		Przy każdej komunikacji musisz wysłać nick gracza - ${nick} i jego ticket ${ticket}
+		<br/>
+		
+		<applet codebase="resources/classes" code="pilkarzyki/ApletPilkarzyki.class" width="550" height="600"></applet>
 	</body>
 </html>
