@@ -16,10 +16,14 @@ import pl.dagguh.soccerfrontend.backend.GameServiceBoundary;
 @Controller
 @SessionAttributes({"nick", "ticket", "gameId"})
 public class GameController {
+	
+	private static final String redPlayerColor = "red";
+	private static final String bluePlayerColor = "blue";
 
-	@RequestMapping(value = "/gameList", method = RequestMethod.GET)
+	@RequestMapping(value = "/chooseGame", method = RequestMethod.GET)
 	public void showGameList(Model model) {
-		model.addAttribute("foo", "Kebab");
+		String gameId = GameServiceBoundary.getOpenGameId();
+		model.addAttribute("openGameId", gameId);
 	}
 
 	@RequestMapping(value = "/game", method = RequestMethod.GET)
@@ -31,6 +35,7 @@ public class GameController {
 	public String createGame(@ModelAttribute("nick") String nick, @ModelAttribute("ticket") String ticket, Model model) {
 		String gameId = GameServiceBoundary.createGame(new AuthenticatedPlayer(nick, ticket));
 		model.addAttribute("gameId", gameId);
+		model.addAttribute("color", redPlayerColor);
 		return "redirect:game";
 	}
 }

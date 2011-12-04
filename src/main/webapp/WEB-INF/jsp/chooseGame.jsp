@@ -9,11 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Lista gier</title>
+        <title>Stwórz lub dołącz do gry</title>
     </head>
     <body>
-		<!--	<applet codebase="resources/classes" code="pilkarzyki/ApletPilkarzyki.class" width="550" height="600"></applet>-->
+		Id otwartej gry: ${openGameId}
+		<br/>
 		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+		<form:form action="joinOpenGame">
+			<input type="submit" value="Dołącz do otwartej gry" />
+		</form:form>
 		<form:form action="createGame">
 			<input type="submit" value="Stwórz grę" />
 		</form:form>

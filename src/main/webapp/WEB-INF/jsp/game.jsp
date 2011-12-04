@@ -12,13 +12,11 @@
         <title>Gra</title>
     </head>
     <body>
-		Tutaj znajduje sie gra!
-		<br/>
-		A jej ID to ${gameId}
-		<br/>
-		Przy każdej komunikacji musisz wysłać nick gracza - ${nick} i jego ticket ${ticket}
-		<br/>
-		
-		<applet codebase="resources/classes" code="pilkarzyki/ApletPilkarzyki.class" width="550" height="600"></applet>
+		<applet codebase="resources/classes" code="pilkarzyki/ApletPilkarzyki.class" width="550" height="600">
+			<param name="nick" value="${nick}"/>
+			<param name="color" value="${color}"/>
+			<param name="ticket" value="${ticket}"/>
+			<param name="gameId" value="${gameId}"/>
+		</applet>
 	</body>
 </html>

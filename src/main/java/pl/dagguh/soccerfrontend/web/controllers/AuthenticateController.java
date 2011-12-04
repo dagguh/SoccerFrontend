@@ -36,7 +36,7 @@ public class AuthenticateController {
 		} else {
 			model.addAttribute("nick", credentials.getNick());
 			model.addAttribute("ticket", ticket);
-			return "redirect:gameList";
+			return "redirect:chooseGame";
 		}
 	}
 }

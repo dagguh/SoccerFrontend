@@ -110,7 +110,7 @@
 <!--validate authentication-->
 <tr>
 	<td>assertLocation</td>
-	<td>*gameList*</td>
+	<td>*chooseGame*</td>
 	<td></td>
 </tr>
 </tbody></table>
