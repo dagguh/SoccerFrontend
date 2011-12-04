@@ -12,10 +12,9 @@
         <title>Stwórz lub dołącz do gry</title>
     </head>
     <body>
-		Id otwartej gry: ${openGameId}
-		<br/>
 		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-		<form:form action="joinOpenGame">
+		<form:form action="joinGame">
+			<input type="hidden" name="gameIdToJoin" value="${openGameId}"/>
 			<input type="submit" value="Dołącz do otwartej gry" />
 		</form:form>
 		<form:form action="createGame">

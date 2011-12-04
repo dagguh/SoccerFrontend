@@ -1,5 +1,6 @@
 package pl.dagguh.soccerfrontend.web.controllers;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,18 +11,18 @@ import pl.dagguh.soccerfrontend.backend.AuthenticatedPlayer;
 import pl.dagguh.soccerfrontend.backend.GameServiceBoundary;
 
 /**
- *
  * @author Maciej Kwidziński <maciek.kwidzinski@gmail.com>
  */
 @Controller
-@SessionAttributes({"nick", "ticket", "gameId"})
+@SessionAttributes({"nick", "ticket", "gameId", "color"})
 public class GameController {
-	
+
+	private static Logger log = Logger.getLogger(GameController.class);
 	private static final String redPlayerColor = "red";
 	private static final String bluePlayerColor = "blue";
 
 	@RequestMapping(value = "/chooseGame", method = RequestMethod.GET)
-	public void showGameList(Model model) {
+	public void showGameChoice(Model model) {
 		String gameId = GameServiceBoundary.getOpenGameId();
 		model.addAttribute("openGameId", gameId);
 	}
@@ -37,5 +38,10 @@ public class GameController {
 		model.addAttribute("gameId", gameId);
 		model.addAttribute("color", redPlayerColor);
 		return "redirect:game";
+	}
+
+	@RequestMapping(value = "/joinGame", method = RequestMethod.POST)
+	public void joinOpenGame(@ModelAttribute("gameIdToJoin") String gameIdToJoin, Model model) {
+		log.info("Joining game " + gameIdToJoin);
 	}
 }
