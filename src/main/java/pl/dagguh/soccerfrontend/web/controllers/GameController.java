@@ -14,7 +14,7 @@ import pl.dagguh.soccerfrontend.backend.GameServiceBoundary;
  * @author Maciej Kwidziński <maciek.kwidzinski@gmail.com>
  */
 @Controller
-@SessionAttributes({"nick", "ticket", "gameId", "color"})
+@SessionAttributes({"nick", "ticket", "gameId", "color", "openGameId"})
 public class GameController {
 
 	private static Logger log = Logger.getLogger(GameController.class);
@@ -35,13 +35,16 @@ public class GameController {
 	@RequestMapping(value = "/createGame", method = RequestMethod.POST)
 	public String createGame(@ModelAttribute("nick") String nick, @ModelAttribute("ticket") String ticket, Model model) {
 		String gameId = GameServiceBoundary.createGame(new AuthenticatedPlayer(nick, ticket));
+		log.info("Created game " + gameId);
 		model.addAttribute("gameId", gameId);
 		model.addAttribute("color", redPlayerColor);
 		return "redirect:game";
 	}
 
 	@RequestMapping(value = "/joinGame", method = RequestMethod.POST)
-	public void joinOpenGame(@ModelAttribute("gameIdToJoin") String gameIdToJoin, Model model) {
+	public String joinOpenGame(@ModelAttribute("openGameId") String gameIdToJoin, Model model) {
 		log.info("Joining game " + gameIdToJoin);
+		model.addAttribute("color", bluePlayerColor);
+		return "redirect:game";
 	}
 }
