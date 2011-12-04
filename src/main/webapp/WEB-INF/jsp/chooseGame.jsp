@@ -14,11 +14,10 @@
     <body>
 		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 		<form:form action="joinGame">
-			<input type="hidden" name="gameIdToJoin" value="${openGameId}"/>
-			<input type="submit" value="Dołącz do otwartej gry" />
+			<input type="submit" value="Dołącz do istniejącej gry" />
 		</form:form>
 		<form:form action="createGame">
-			<input type="submit" value="Stwórz grę" />
+			<input type="submit" value="Stwórz nową grę" />
 		</form:form>
 	</body>
 </html>
