@@ -18,5 +18,6 @@
 			<param name="ticket" value="${ticket}"/>
 			<param name="gameId" value="${gameId}"/>
 		</applet>
+		<a href="chooseGame">Powrót do wyboru gry</a>
 	</body>
 </html>
