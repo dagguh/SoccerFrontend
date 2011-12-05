@@ -18,6 +18,6 @@ class Backend {
 	}
 
 	private static String getBackendRestUri() {
-		return "https://mirage.hopto.org/SoccerBackend/rest";
+		return "http://mirage.hopto.org/SoccerBackend/rest";
 	}
 }
