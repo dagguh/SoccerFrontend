@@ -14,7 +14,7 @@ import pl.dagguh.soccerfrontend.web.forms.Credentials;
  * @author Maciej Kwidziński <maciek.kwidzinski@gmail.com>
  */
 @Controller
-@SessionAttributes({"nick", "ticket"})
+@SessionAttributes({"nick", "ticket", "userError"})
 public class AuthenticateController {
 
 	@RequestMapping(value = "/authenticateForm", method = RequestMethod.GET)
