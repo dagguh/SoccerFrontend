@@ -18,6 +18,6 @@ class Backend {
 	}
 
 	private static String getBackendRestUri() {
-		return "https://localhost:8181/SoccerBackend/rest";
+		return "https://89.69.135.253:8181/SoccerBackend/rest";
 	}
 }
