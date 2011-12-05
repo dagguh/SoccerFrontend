@@ -21,4 +21,9 @@ public class GameServiceBoundary {
 		log.info("Recieved open game id: " + openGameId);
 		return openGameId;
 	}
+
+	public static void joinGame(AuthenticatedPlayer player, String gameId) {
+		log.info(player + " wants to join game " + gameId);
+		Backend.getResource("/game/join/" + gameId).post(player);
+	}
 }

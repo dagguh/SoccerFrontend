@@ -42,8 +42,9 @@ public class GameController {
 	}
 
 	@RequestMapping(value = "/joinGame", method = RequestMethod.POST)
-	public String joinOpenGame(@ModelAttribute("openGameId") String gameIdToJoin, Model model) {
+	public String joinOpenGame(@ModelAttribute("nick") String nick, @ModelAttribute("ticket") String ticket, @ModelAttribute("openGameId") String gameIdToJoin, Model model) {
 		log.info("Joining game " + gameIdToJoin);
+		GameServiceBoundary.joinGame(new AuthenticatedPlayer(nick, ticket), gameIdToJoin);
 		model.addAttribute("color", bluePlayerColor);
 		return "redirect:game";
 	}
